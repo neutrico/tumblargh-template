@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta name="description" content="{MetaDescription}">
+
+    <title>{block:SearchPage}Search results for "{SearchQuery}" - {/block:SearchPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script>
+     //If Google CDN is down, use Microsoft's CDN Network
+     window.jQuery || document.write('<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.min.js">\x3C/script>')</script>
+    <script>
+     //If Microsoft CDN Network is down, Use the same one that jQuery hosts
+     window.jQuery || document.write('<script src="//code.jquery.com/jquery-1.10.2.min.js">\x3C/script>')</script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script>
+     // If Bootstrap CDN is down, use Microsoft's CDN Network to get JS
+     $.fn.modal||document.write('<script src="http://ajax.aspnetcdn.com/ajax/bootstrap/3.1.1/bootstrap.min.js"><\/script>')</script>
+    <script>
+     // If Bootstrap CDN is down, use Microsoft's CDN Network to get CSS
+     (function($) {
+       $(function() {
+	 if ($('body').css('color') !== 'rgb(51, 51, 51)') {
+	   $('head').prepend('<link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/bootstrap/3.1.1/css/bootstrap.min.css">');
+	   $('head').prepend('<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css">');
+	 }
+       });
+     })(window.jQuery);
+    </script>
+    {block:Hidden}
+    <meta name="select:Layout" content="regular" title="Regular">
+    <meta name="select:Layout" content="narrow" title="Narrow">
+    <meta name="select:Layout" content="grid" title="Grid">
+    {/block:Hidden}
+    <style>
+     /* Custom CSS */
+     {CustomCSS}
+    </style>
+  </head>
+  <body>
+    <script>
+     // Fallback to other CDN if Bootstrap CDN is down.
+     var body_color = getComputedStyle(document.body, null);
+     if (body_color.color !== 'rgb(51, 51, 51)') {
+
+       var bt_link = document.createElement('link');
+       bt_link.href="//ajax.aspnetcdn.com/ajax/bootstrap/3.1.1/css/bootstrap.min.css";
+       bt_link.rel="stylesheet";
+
+       var fa_link = document.createElement('link');
+       fa_link.href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css";
+       fa_link.rel="stylesheet";
+
+       head = document.getElementsByTagName("head")[0];
+       head.insertBefore(fa_link, head.firstChild);
+       head.insertBefore(bt_link, head.firstChild);
+
+     }
+    </script>
+    <%= yield %>

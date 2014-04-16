@@ -1,0 +1,29 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <h1 class="nocontent hide">Main Navigation</h1>
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-bars fa-fw"></i></button>
+      <a href="index.html" class="navbar-brand">Home</a>
+    </div>
+  </div>
+</nav>
+<header class="jumbotron">
+  <h1 class="container">{Title}</h1>
+  <p class="container">{Description}</p>
+</header>
+<main class="container">
+  <div class="row">
+
+  </div>
+</main>
+
+<h1>{Title}</h1>
+{block:Description}
+<p id="description">{Description}</p>
+{/block:Description}
+<p>test</p>
+<p>test</p>
+{block:Posts}{block:Text}
+<p>{Body}</p>
+{/block:Text}
+{/block:Posts}
