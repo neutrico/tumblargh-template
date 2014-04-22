@@ -1,39 +1,40 @@
-tumblargh-template
-==================
+* tumblargh-template
 
-Tumblargh template set up for Tumblr theme development with Bootstrap 3
+  Tumblargh template set up for Tumblr theme development with Bootstrap 3
 
-Usage on Ubuntu 14.04 platform.
+  Usage on Ubuntu 14.04 platform.
 
-Remove all debianized Ruby packages.
+  Remove all debianized Ruby packages.
 
-#+BEGIN_SRC sh
+  #+BEGIN_SRC sh
 sudo apt-get --purge remove ruby-*
-#+END_SRC
+  #+END_SRC
 
-Install minimal necessary Ruby packages and enable gem system updates for root user.
+  Install minimal necessary Ruby packages and enable gem system updates for root user.
 
-```
+  #+BEGIN_SRC sh
 sudo apt-get install ruby ruby-dev
 sudo echo 'export REALLY_GEM_UPDATE_SYSTEM=1' >> ~/.profile
-```
-Update gems and install Middleman
+  #+END_SRC
 
-```
+  Update gems and install Middleman
+
+  #+BEGIN_SRC sh
 sudo gem update --system
 sudo gem install bundler
 sudo gem install middleman
-```
+  #+END_SRC
 
-Install Middleman template
-```
+  Install Middleman template
+
+  #+BEGIN_SRC sh
 mkdir -p ~/.middleman
 cd ~/.middleman
 git clone git@github.com:neutrico/tumblargh-template.git
-```
+  #+END_SRC
 
-Create Tumblr theme project from template
-```
+  Create Tumblr theme project from template
+  #+BEGIN_SRC sh
 mkdir -p ~/someproject
 cd ~/someproject
 
@@ -42,9 +43,9 @@ middleman init test --template=tumblargh-template
 cd test
 
 bundle exec middleman server
+  #+END_SRC
 
-```
-Replace apikey and name in config.rb
-Go to http:/0.0.0.0:4567/__middleman to preview and development.
-Go to ~/someproject/src to create and edit *.html.erb files.
-Use livereload or mozrepl to view changes immediately.
+  Replace apikey and name in config.rb
+  Go to http:/0.0.0.0:4567/__middleman to preview and development.
+  Go to ~/someproject/src to create and edit *.html.erb files.
+  Use livereload or mozrepl to view changes immediately.
