@@ -7,9 +7,9 @@ Usage on Ubuntu 14.04 platform.
 
 Remove all debianized Ruby packages.
 
-```
+#+BEGIN_SRC sh
 sudo apt-get --purge remove ruby-*
-```
+#+END_SRC
 
 Install minimal necessary Ruby packages and enable gem system updates for root user.
 
