@@ -50,9 +50,9 @@ end
 activate :i18n, :mount_at_root => :pl
 
 # Reload the browser automatically whenever files change
-configure :development do
-  activate :livereload
-end
+# configure :development do
+#   activate :livereload
+# end
 
 configure :build do
 
