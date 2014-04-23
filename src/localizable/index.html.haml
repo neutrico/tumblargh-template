@@ -1,0 +1,22 @@
+!!! 5
+%html{ :lang=>"en" }
+  %head
+    = render :partial=>'meta'
+
+    %title #{ data.meta.title }
+
+    = render :partial=>'authorship'
+    = render :partial=>'style'
+    = render :partial=>'modernizr
+
+  %body
+    %aside
+    %nav
+    %main
+    = render :partial=>'footer'
+
+  / Scripts
+  = render :partial=>'jq'
+  = render :partial=>'bt'
+  = render :partial=>'maps'
+  = render :partial=>'analytics'
