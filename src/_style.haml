@@ -1,1 +1,24 @@
 / Style
+%link{ :rel=>"stylesheet", :href=>"/assets/css/style.css" }
+:javascript
+  function test_bt_css() {
+    var box_sizing = window.getComputedStyle(document.documentElement, null),
+    bt_link = document.createElement('link'),
+    fa_link = document.createElement('link');
+    if ( box_sizing.getPropertyValue('box-sizing') !== 'border-box' &&
+    box_sizing.getPropertyValue('-moz-box-sizing') !== 'border-box' &&
+    box_sizing.getPropertyValue('-webkit-box-sizing') !== 'border-box' ) {
+
+        bt_link.href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css";
+        bt_link.rel="stylesheet";
+
+        fa_link.href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css";
+        fa_link.rel="stylesheet";
+
+        head = document.getElementsByTagName("head")[0];
+        head.insertBefore(fa_link, head.firstChild);
+        head.insertBefore(bt_link, head.firstChild);
+
+    }
+    }
+    test_bt_css();

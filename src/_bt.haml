@@ -1,1 +1,10 @@
 / Bootstrap
+%script{ :src=>"//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js" }
+
+/ Bootstrap fallback to Microsoft CDN
+:javascript
+  $.fn.modal||document.write('<script src="http://ajax.aspnetcdn.com/ajax/bootstrap/3.1.1/bootstrap.min.js"><\/script>');
+
+/ Bootstrap fallback to Bootstrap CDN
+:javascript
+  $.fn.modal||document.write('<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"><\/script>');

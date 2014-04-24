@@ -50,11 +50,16 @@ end
 activate :i18n, :mount_at_root => :pl
 
 # Reload the browser automatically whenever files change
-# configure :development do
-#   activate :livereload
-# end
+configure :development do
+  set :debug_assets, true
+  set :data_dir, 'data/devel'
+  activate :livereload
+end
 
 configure :build do
+
+  set :debug_assets, false
+  set :data_dir, 'data/build'
 
   # For example, change the Compass output style for deployment
   compass_config do |config|
