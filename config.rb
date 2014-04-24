@@ -66,7 +66,9 @@ configure :build do
   activate :i18n, :mount_at_root => :pl
   activate :google_analytics do |ga|
     ga.tracking_id = '{text:Google Analytics ID}'
-    ga.domain_Name = '{BlogURL}'
+    ga.debug = false
+    ga.anonymize_ip = true
+    ga.domain_name = '{BlogURL}'
   end
 
   # For example, change the Compass output style for deployment
