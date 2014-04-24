@@ -11,6 +11,8 @@ gem "middleman-deploy"
 
 gem "middleman-minify-html"
 
+gem "middleman-google-analytics"
+
 gem "bootstrap-sass", "> 3.1.0"
 
 # For faster file watcher updates on Windows:

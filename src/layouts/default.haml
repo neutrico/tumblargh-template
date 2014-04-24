@@ -1,9 +1,10 @@
 !!! 5
 %html{ :lang=>"en" }
   %head
-    = partial 'options'
+    - if environment == :build
+      = partial 'options'
     = partial 'meta'
-    %title #{ data.meta.title }
+    %title {Title}
     = partial 'authorship'
     = partial 'style'
     = partial 'modernizr'
@@ -15,4 +16,4 @@
     = partial 'jq'
     = partial 'bt'
     = partial 'maps'
-    = partial 'analytics'
+    = google_analytics_tag

@@ -5,7 +5,7 @@
 # Remove .html extension from pages
 activate :directory_indexes
 
-# require 'tumblargh'
+require 'tumblargh'
 
 # activate :tumblargh,
 #   api_key: 'apikey',
@@ -34,7 +34,6 @@ compass_config do |config|
   config.line_comments = false
 end
 
-
 ###
 # Deployment
 ###
@@ -54,12 +53,20 @@ configure :development do
   set :debug_assets, true
   set :data_dir, 'data/devel'
   activate :livereload
+  activate :google_analytics do |ga|
+    ga.tracking_id = false
+  end
 end
 
 configure :build do
 
   set :debug_assets, false
   set :data_dir, 'data/build'
+
+  activate :google_analytics do |ga|
+    ga.tracking_id = '{text:Google Analytics ID}'
+    ga.domain_Name = ''
+  end
 
   # For example, change the Compass output style for deployment
   compass_config do |config|
