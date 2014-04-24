@@ -1,0 +1,9 @@
+/ Navigation
+%nav.navbar.navbar-inverse.navbar-static-top{ :itemtype=>"http://schema.org/SiteNavigationElement", :itemscope=>"itemscope", :role=>"navigation", "data-spy"=>"affix", "data-offset-top"=>"40" }
+  %h3.nocontent.hide= t(:main_nav)
+    .container
+      .navbar-header
+        %button.navbar-toggle{ :data=>{:target=>".navbar-collapse", :toggle=>"collapse"}, :type=>"button" }
+          %i.fa.fa-bars.fa-2x
+        %a.navbar-brand{ :href=>"/" } Brand
+      .collapse.navbar-collapse

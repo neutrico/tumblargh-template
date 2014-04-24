@@ -1,21 +1,5 @@
-!!! 5
-%html{ :lang=>"en" }
-  %head
-    = partial 'meta'
-
-    %title #{ data.meta.title }
-
-    = partial 'authorship'
-    = partial 'style'
-    = partial 'modernizr'
-
-  %body
-    %aside
-    %nav
-    %main
-    = partial 'footer'
-
-  = partial 'jq'
-  = partial 'bt'
-  = partial 'maps'
-  = partial 'analytics'
+---
+layout: default
+---
+%main.container{ :itemtype=>"http://schema.org/Blog", :itemscope=>"itemscope", :itemprop=>"mainContentOfPage", :role=>"main"}
+  %p test

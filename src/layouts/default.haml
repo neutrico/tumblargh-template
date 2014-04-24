@@ -1,0 +1,18 @@
+!!! 5
+%html{ :lang=>"en" }
+  %head
+    = partial 'options'
+    = partial 'meta'
+    %title #{ data.meta.title }
+    = partial 'authorship'
+    = partial 'style'
+    = partial 'modernizr'
+  %body
+    = partial 'aside'
+    = partial 'nav'
+    = yield
+    = partial 'footer'
+    = partial 'jq'
+    = partial 'bt'
+    = partial 'maps'
+    = partial 'analytics'
