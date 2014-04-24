@@ -46,12 +46,12 @@ activate :deploy do |deploy|
   deploy.build_before = true # default: false
 end
 
-activate :i18n, :mount_at_root => :pl
-
 # Reload the browser automatically whenever files change
 configure :development do
   set :debug_assets, true
   set :data_dir, 'data/devel'
+
+  activate :i18n, :mount_at_root => :pl
   activate :livereload
   activate :google_analytics do |ga|
     ga.tracking_id = false
@@ -63,9 +63,10 @@ configure :build do
   set :debug_assets, false
   set :data_dir, 'data/build'
 
+  activate :i18n, :mount_at_root => :pl
   activate :google_analytics do |ga|
     ga.tracking_id = '{text:Google Analytics ID}'
-    ga.domain_Name = ''
+    ga.domain_Name = '{BlogURL}'
   end
 
   # For example, change the Compass output style for deployment
@@ -82,7 +83,7 @@ configure :build do
   activate :minify_javascript
 
   # Minify HTML on build
-  activate :minify_html
+  # activate :minify_html
 
   # Enable cache buster
   # activate :asset_hash
