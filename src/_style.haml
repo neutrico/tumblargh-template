@@ -4,26 +4,80 @@
   @import url(http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css);
   @import url(http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css);
 
-/ Fallback Bootstrap CSS CDN
-:javascript
-  function test_bt_css() {
-    var box_sizing = window.getComputedStyle(document.documentElement, null),
-    bt_link = document.createElement('link'),
-    fa_link = document.createElement('link');
-    if ( box_sizing.getPropertyValue('box-sizing') !== 'border-box' &&
-    box_sizing.getPropertyValue('-moz-box-sizing') !== 'border-box' &&
-    box_sizing.getPropertyValue('-webkit-box-sizing') !== 'border-box' ) {
+  // Core variables and mixins
+  @import "bootstrap/variables";
+  @import "bootstrap/mixins";
 
-        bt_link.href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css";
-        bt_link.rel="stylesheet";
+  // Reset and dependencies
+  @import "bootstrap/normalize";
+  @import "bootstrap/print";
+  //@import "bootstrap/glyphicons";
 
-        fa_link.href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css";
-        fa_link.rel="stylesheet";
+  // Core CSS
+  @import "bootstrap/scaffolding";
+  @import "bootstrap/type";
+  @import "bootstrap/code";
+  @import "bootstrap/grid";
+  @import "bootstrap/tables";
+  @import "bootstrap/forms";
+  @import "bootstrap/buttons";
+  
+  // Components
+  @import "bootstrap/component-animations";
+  //@import "bootstrap/dropdowns";
+  @import "bootstrap/button-groups";
+  @import "bootstrap/input-groups";
+  @import "bootstrap/navs";
+  @import "bootstrap/navbar";
+  @import "bootstrap/breadcrumbs";
+  @import "bootstrap/pagination";
+  @import "bootstrap/pager";
+  @import "bootstrap/labels";
+  @import "bootstrap/badges";
+  @import "bootstrap/jumbotron";
+  //@import "bootstrap/thumbnails";
+  //@import "bootstrap/alerts";
+  //@import "bootstrap/progress-bars";
+  //@import "bootstrap/media";
+  //@import "bootstrap/list-group";
+  //@import "bootstrap/panels";
+  //@import "bootstrap/responsive-embed";
+  //@import "bootstrap/wells";
+  //@import "bootstrap/close";
+  
+  // Components w/ JavaScript
+  //@import "bootstrap/modals";
+  @import "bootstrap/tooltip";
+  //@import "bootstrap/popovers";
+  @import "bootstrap/carousel";
+  
+  // Utility classes
+  //@import "bootstrap/utilities";
+  @import "bootstrap/responsive-utilities";
 
-        head = document.getElementsByTagName("head")[0];
-        head.insertBefore(fa_link, head.firstChild);
-        head.insertBefore(bt_link, head.firstChild);
 
-    }
-    }
-    test_bt_css();
+-# Code below is commented out because we will use inline CSS
+-#    
+-# / Fallback Bootstrap CSS CDN
+-# :javascript
+-#   function test_bt_css() {
+-#     var box_sizing = window.getComputedStyle(document.documentElement, null),
+-#     bt_link = document.createElement('link'),
+-#     fa_link = document.createElement('link');
+-#     if ( box_sizing.getPropertyValue('box-sizing') !== 'border-box' &&
+-#     box_sizing.getPropertyValue('-moz-box-sizing') !== 'border-box' &&
+-#     box_sizing.getPropertyValue('-webkit-box-sizing') !== 'border-box' ) {
+
+-#         bt_link.href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css";
+-#         bt_link.rel="stylesheet";
+
+-#         fa_link.href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css";
+-#         fa_link.rel="stylesheet";
+
+-#         head = document.getElementsByTagName("head")[0];
+-#         head.insertBefore(fa_link, head.firstChild);
+-#         head.insertBefore(bt_link, head.firstChild);
+
+-#     }
+-#     }
+-#     test_bt_css();

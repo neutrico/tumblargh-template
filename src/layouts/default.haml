@@ -1,6 +1,6 @@
 !!! 5
-%html{ :lang=>"en" }
-  %head
+%html(itemscope){ :itemtype=>"http://schema.org/WebPage", :lang=>"en" }<
+  %head<
     - if environment == :build
       = partial 'options'
     = partial 'meta'
@@ -14,14 +14,14 @@
     = yield
     = partial 'footer'
 
+    / Google Analytics
+    = google_analytics_universal_tag
+
+    / Google Maps
+    = partial 'maps'
+
     / jQuery
     = partial 'jq'
 
     / Twitter Bootstrap
     = partial 'bt'
-
-    / Google Maps
-    = partial 'maps'
-
-    / Google Analytics
-    = google_analytics_universal_tag
